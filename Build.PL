@@ -11,7 +11,11 @@ my $builder = Module::Build->new(
                              'Unicode::Normalize' => 0, },
     build_requires      => { 'Test::More'         => 0, },
     add_to_cleanup      => [ 'Text-Transliterator-*' ],
-    create_makefile_pl => 'traditional',
+    meta_merge => {
+      resources => {
+        repository => 'https://github.com/damil/Text-Transliterator',
+       }
+     },
 );
 
 $builder->create_build_script();

@@ -3,11 +3,10 @@ package Text::Transliterator::Unaccent;
 use warnings;
 use strict;
 
-use Text::Transliterator;
+use Text::Transliterator; our $VERSION = $Text::Transliterator::VERSION;
+
 use Unicode::UCD        qw(charinfo charscript charblock);
 use Unicode::Normalize  qw();
-
-our $VERSION = '1.00';
 
 sub char_map {
   my $class = shift;

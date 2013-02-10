@@ -2,7 +2,7 @@ package Text::Transliterator;
 use strict;
 use warnings;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 sub new {
   my $class = shift;
@@ -27,7 +27,8 @@ sub new {
     or die 'Text::Transliterator->new(): too many args';
 
   # build the coderef
-  my $src     = "sub {tr/$from/$to/$modifiers for \@_ }";
+  my $src = "sub {tr[$from][$to]$modifiers for \@_ }";
+  local $@;
   my $coderef = eval $src or die $@;
 
   return $coderef;
@@ -45,16 +46,16 @@ Text::Transliterator - Wrapper around Perl tr/../../ operator
 
 =head1 SYNOPSIS
 
-  my $tr = Text::Transliterator->new($from, $to);
+  my $tr = Text::Transliterator->new($from, $to, $modifiers);
   # or
-  my $tr = Text::Transliterator->new(\%map);
+  my $tr = Text::Transliterator->new(\%map, $modifiers);
 
   $tr->(@strings);
 
 =head1 DESCRIPTION
 
 This package is a simple wrapper around Perl's transliteration operator
-C<tr/../../>. Starting either from two strings of characters, or from a
+C<tr/../../..>. Starting either from two strings of characters, or from a
 map of characters, it will compile a function that
 applies the transliteration to any list of strings.
 
@@ -86,16 +87,16 @@ and a string of replacement characters.  The third argument
 C<$modifiers> is optional and may contain a string with any
 combination of the C<cds> modifiers to the C<tr/.../.../> operator.
 
-In the second syntax, the argument is a hashref, in which 
+In the second syntax, the argument is a hashref, in which
 keys are the characters to be replaced, and values are the
 replacement characters. Optional C<$modifiers> are as above.
 
 The return value from that C<new> method is actually
-a reference to a function, not an object. That function is called as 
+a reference to a function, not an object. That function is called as
 
   $tr->(@strings);
 
-and modifies every member of C<@strings> I<in place>, 
+and modifies every member of C<@strings> I<in place>,
 like the C<tr/.../.../> operator.
 The return value is the number of transliterated characters
 in the last member of C<@strings>.

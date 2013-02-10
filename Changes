@@ -1,5 +1,11 @@
 Revision history for Text-Transliterator
 
-0.01    
+1.01 10.02.2013
+  - using tr[..][..] instead of tr/../../, in case '/' would be in the input
+  - localization of $@ before eval
+  - same $VERSION for both modules
+  - META.yml links to source repository
+
+1.00 13.07.2012    
   - Initial release
 
