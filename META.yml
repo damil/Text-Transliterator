@@ -1,12 +1,13 @@
 ---
-abstract: 'Wrapper around Perl tr/../../ operator'
+abstract: Wrapper around Perl tr/../../ operator
 author:
   - 'Laurent Dami <lau.....da..@justice.ge.ch>'
 build_requires:
   Test::More: 0
 configure_requires:
-  Module::Build: 0.36
-generated_by: 'Module::Build version 0.3607'
+  Module::Build: 0.40
+dynamic_config: 1
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -15,7 +16,7 @@ name: Text-Transliterator
 provides:
   Text::Transliterator:
     file: lib/Text/Transliterator.pm
-    version: 1.00
+    version: 1.01
   Text::Transliterator::Unaccent:
     file: lib/Text/Transliterator/Unaccent.pm
     version: 1.00
@@ -24,4 +25,5 @@ requires:
   Unicode::UCD: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.00
+  repository: https://github.com/damil/Text-Transliterator
+version: 1.01
