@@ -2,7 +2,7 @@ package Text::Transliterator;
 use strict;
 use warnings;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 sub new {
   my $class = shift;
@@ -23,7 +23,7 @@ sub new {
 
   # remaining arguments
   my $modifiers = shift || '';
-  not @ 
+  not @_
     or die 'Text::Transliterator->new(): too many args';
 
   # build the coderef
@@ -103,7 +103,7 @@ in the last member of C<@strings>.
 
 =head1 AUTHOR
 
-Laurent Dami, C<< <lau.....da..@justice.ge.ch> >>
+Laurent Dami, C<< <dami AT cpan DOT org> >>
 
 =head1 BUGS
 
