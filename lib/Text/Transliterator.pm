@@ -2,7 +2,7 @@ package Text::Transliterator;
 use strict;
 use warnings;
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 sub new {
   my $class = shift;
@@ -23,7 +23,7 @@ sub new {
 
   # remaining arguments
   my $modifiers = shift || '';
-  not @ 
+  not @_
     or die 'Text::Transliterator->new(): too many args';
 
   # build the coderef

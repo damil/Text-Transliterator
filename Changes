@@ -1,7 +1,11 @@
 Revision history for Text-Transliterator
 
-1.02 08.07.2017
+1.03 08.07.2017
   - fixes in Build.PL and Git repository structure (no functionality changes)
+
+1.02 12.05.2016
+  - fixed wrong underscore in source text (\xA0 instead of \x5f) ...
+    it went unnoticed until perl v5.25.1 !
 
 1.01 10.02.2013
   - using tr[..][..] instead of tr/../../, in case '/' would be in the input
