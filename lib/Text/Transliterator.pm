@@ -2,7 +2,7 @@ package Text::Transliterator;
 use strict;
 use warnings;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 sub new {
   my $class = shift;
@@ -103,7 +103,7 @@ in the last member of C<@strings>.
 
 =head1 AUTHOR
 
-Laurent Dami, C<< <lau.....da..@justice.ge.ch> >>
+Laurent Dami, C<< <dami@cpan.org> >>
 
 =head1 BUGS
 
@@ -147,7 +147,7 @@ L<http://search.cpan.org/dist/Text-Transliterator/>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright 2010 Laurent Dami.
+Copyright 2010, 2017 Laurent Dami.
 
 This program is free software; you can redistribute it and/or modify it
 under the terms of either: the GNU General Public License as published
